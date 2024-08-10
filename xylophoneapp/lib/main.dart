@@ -48,18 +48,21 @@ class _MusicPageState extends State<MusicPage> {
       child: Column(
         children: [
           Row(
-            children: [
-              Expanded(child: TextButton(
-                onPressed: () {},
-                child: Text(
-                  'hihi',
-                  style: TextStyle(
-                    color: Colors.black,
+              children: [
+                Expanded(child: TextButton(
+                  onPressed: () {
+                    final player = AudioPlayer();
+                    player.play(AssetSource('rclick-13693.mp3'));
+                  },
+                  child: Text(
+                    'hihi',
+                    style: TextStyle(
+                      color: Colors.black,
+                    ),
                   ),
                 ),
-              ),
-              ),
-      ]
+                ),
+              ]
           ),
           Expanded(child: TextButton(
             onPressed: () {},
