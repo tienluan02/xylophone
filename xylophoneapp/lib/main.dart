@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.black,
         appBar: AppBar(
           backgroundColor: Colors.blue[800],
           title: const Center(
@@ -42,19 +42,26 @@ class MusicPage extends StatefulWidget {
 }
 
 class _MusicPageState extends State<MusicPage> {
+
+  void playMusic(int number) {
+    final player = AudioPlayer();
+    player.play(AssetSource('note$number.wav'));
+  }
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Row(
-              children: [
-                Expanded(child: TextButton(
+                Expanded(child: MaterialButton(
+                  // style: ButtonStyle(
+                  //   backgroundColor: WidgetStateProperty.all(Colors.red),
+                  // ),
+                  color: Colors.red,
                   onPressed: () {
-                    final player = AudioPlayer();
-                    player.play(AssetSource('rclick-13693.mp3'));
+                    playMusic(1);
                   },
-                  child: Text(
+                  child: const Text(
                     'hihi',
                     style: TextStyle(
                       color: Colors.black,
@@ -62,11 +69,15 @@ class _MusicPageState extends State<MusicPage> {
                   ),
                 ),
                 ),
-              ]
-          ),
-          Expanded(child: TextButton(
-            onPressed: () {},
-            child: Text(
+          Expanded(child: MaterialButton(
+    //         style: ButtonStyle(
+    //           backgroundColor: WidgetStateProperty.all(Colors.orange),
+    // ),
+            color: Colors.orange,
+            onPressed: () {
+              playMusic(2);
+            },
+            child: const Text(
               'hihi',
               style: TextStyle(
                 color: Colors.black,
@@ -74,9 +85,79 @@ class _MusicPageState extends State<MusicPage> {
             ),
           ),
           ),
-          Expanded(child: TextButton(
-            onPressed: () {},
-            child: Text(
+          Expanded(child: MaterialButton(
+            // style: ButtonStyle(
+            //   backgroundColor: WidgetStateProperty.all(Colors.yellow),
+            // ),
+            color: Colors.yellow,
+            onPressed: () {
+              playMusic(3);
+            },
+            child: const Text(
+              'hihi',
+              style: TextStyle(
+                color: Colors.black,
+              ),
+            ),
+          ),
+          ),
+          Expanded(child: MaterialButton(
+            // style: ButtonStyle(
+            //   backgroundColor: WidgetStateProperty.all(Colors.green),
+            // ),
+            color: Colors.green,
+            onPressed: () {
+              playMusic(4);
+            },
+            child: const Text(
+              'hihi',
+              style: TextStyle(
+                color: Colors.black,
+              ),
+            ),
+          ),
+          ),
+          Expanded(child: MaterialButton(
+            // style: ButtonStyle(
+            //   backgroundColor: WidgetStateProperty.all(Colors.blue),
+            // ),
+            color: Colors.blue,
+            onPressed: () {
+              playMusic(5);
+            },
+            child: const Text(
+              'hihi',
+              style: TextStyle(
+                color: Colors.black,
+              ),
+            ),
+          ),
+          ),
+          Expanded(child: MaterialButton(
+            // style: ButtonStyle(
+            //   backgroundColor: WidgetStateProperty.all(Colors.teal),
+            // ),
+            color: Colors.teal,
+            onPressed: () {
+              playMusic(6);
+            },
+            child: const Text(
+              'hihi',
+              style: TextStyle(
+                color: Colors.black,
+              ),
+            ),
+          ),
+          ),
+          Expanded(child: MaterialButton(
+            // style: ButtonStyle(
+            //   backgroundColor: WidgetStateProperty.all(Colors.purple),
+            // ),
+            color: Colors.purple,
+            onPressed: () {
+              playMusic(7);
+            },
+            child: const Text(
               'hihi',
               style: TextStyle(
                 color: Colors.black,
