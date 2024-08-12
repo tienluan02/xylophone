@@ -1,3 +1,5 @@
+// import 'dart:nativewrappers/_internal/vm/lib/core_patch.dart';
+
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 
@@ -47,124 +49,39 @@ class _MusicPageState extends State<MusicPage> {
     final player = AudioPlayer();
     player.play(AssetSource('note$number.wav'));
   }
+
+  Widget buildButtons({required Color color,required int number}) {
+    return Expanded(child: MaterialButton(
+      // style: ButtonStyle(
+      //   backgroundColor: WidgetStateProperty.all(Colors.red),
+      // ),
+      color: color,
+      onPressed: () {
+        playMusic(number);
+      },
+      child: const Text(
+        'hihi',
+        style: TextStyle(
+          color: Colors.black,
+        ),
+      ),
+    ),
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-                Expanded(child: MaterialButton(
-                  // style: ButtonStyle(
-                  //   backgroundColor: WidgetStateProperty.all(Colors.red),
-                  // ),
-                  color: Colors.red,
-                  onPressed: () {
-                    playMusic(1);
-                  },
-                  child: const Text(
-                    'hihi',
-                    style: TextStyle(
-                      color: Colors.black,
-                    ),
-                  ),
-                ),
-                ),
-          Expanded(child: MaterialButton(
-    //         style: ButtonStyle(
-    //           backgroundColor: WidgetStateProperty.all(Colors.orange),
-    // ),
-            color: Colors.orange,
-            onPressed: () {
-              playMusic(2);
-            },
-            child: const Text(
-              'hihi',
-              style: TextStyle(
-                color: Colors.black,
-              ),
-            ),
-          ),
-          ),
-          Expanded(child: MaterialButton(
-            // style: ButtonStyle(
-            //   backgroundColor: WidgetStateProperty.all(Colors.yellow),
-            // ),
-            color: Colors.yellow,
-            onPressed: () {
-              playMusic(3);
-            },
-            child: const Text(
-              'hihi',
-              style: TextStyle(
-                color: Colors.black,
-              ),
-            ),
-          ),
-          ),
-          Expanded(child: MaterialButton(
-            // style: ButtonStyle(
-            //   backgroundColor: WidgetStateProperty.all(Colors.green),
-            // ),
-            color: Colors.green,
-            onPressed: () {
-              playMusic(4);
-            },
-            child: const Text(
-              'hihi',
-              style: TextStyle(
-                color: Colors.black,
-              ),
-            ),
-          ),
-          ),
-          Expanded(child: MaterialButton(
-            // style: ButtonStyle(
-            //   backgroundColor: WidgetStateProperty.all(Colors.blue),
-            // ),
-            color: Colors.blue,
-            onPressed: () {
-              playMusic(5);
-            },
-            child: const Text(
-              'hihi',
-              style: TextStyle(
-                color: Colors.black,
-              ),
-            ),
-          ),
-          ),
-          Expanded(child: MaterialButton(
-            // style: ButtonStyle(
-            //   backgroundColor: WidgetStateProperty.all(Colors.teal),
-            // ),
-            color: Colors.teal,
-            onPressed: () {
-              playMusic(6);
-            },
-            child: const Text(
-              'hihi',
-              style: TextStyle(
-                color: Colors.black,
-              ),
-            ),
-          ),
-          ),
-          Expanded(child: MaterialButton(
-            // style: ButtonStyle(
-            //   backgroundColor: WidgetStateProperty.all(Colors.purple),
-            // ),
-            color: Colors.purple,
-            onPressed: () {
-              playMusic(7);
-            },
-            child: const Text(
-              'hihi',
-              style: TextStyle(
-                color: Colors.black,
-              ),
-            ),
-          ),
-          ),
+          buildButtons(color: Colors.red, number: 1),
+          buildButtons(color: Colors.orange, number: 2),
+          buildButtons(color: Colors.yellow, number: 3),
+          buildButtons(color: Colors.green, number: 4),
+          buildButtons(color: Colors.blue, number: 5),
+          buildButtons(color: Colors.teal, number: 6),
+          buildButtons(color: Colors.purple, number: 7),
+
         ],
       ),
     );
